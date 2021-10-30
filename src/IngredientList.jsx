@@ -7,9 +7,7 @@ function IngredientList(props) {
             <li key={index} 
                 className={ ingredient.prepared ? 'prepared' : '' }
                 // TODO: Add onClick event
-                onClick={ () => props.onClick(index) }
-                
-            >
+                onClick={ () => props.onClick(index, "ingredients") }>
                 { ingredient.name }
             </li>
         );
