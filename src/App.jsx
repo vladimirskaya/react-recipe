@@ -3,20 +3,21 @@ import React, { useEffect, useState } from 'react';
 import RecipeTitle from './RecipeTitle'
 import IngredientList from './IngredientList'
 import Steps from './Steps'
+import Comment from './Comment';
 
 function App() {
     const initialRecipe = {
-        title: 'Mashed potatoes',
+        title: 'Картофельное пюре',
         feedback: {
             rating: 4.8,
             reviews: 20
         },
         ingredients: [
-            { name: '3 potatoes, cut into 1/2" pieces', prepared: false },
-            { name: '4 Tbsp butter', prepared: false },
-            { name: '1/8 cup heavy cream', prepared: false },
-            { name: 'Salt', prepared: false },
-            { name: 'Pepper', prepared: false },
+            { name: '3 картофелины, нарезанные напополам', prepared: false },
+            { name: '4 столовые ложки сливочного масла', prepared: false },
+            { name: '1/8 чашки сливок', prepared: false },
+            { name: 'Соль', prepared: false },
+            { name: 'Перец', prepared: false },
         ],
         steps: [
             {name: "Добавьте нарезанный картофель в кастрюлю с соленой водой.", prepared: false},
@@ -52,10 +53,12 @@ function App() {
 
     return (
         <article>
-            <h1>Recipe Manager</h1>
+            <h1>Книга рецептов</h1>
 
             {/* TODO: Pass recipe metadata to RecipeTitle */}
             <RecipeTitle title={recipe.title} feedback={recipe.feedback} />
+
+            <Comment />
 
             {/* TODO: Pass ingredients and event listener to IngredientList */}
             <IngredientList ingredients={recipe.ingredients} onClick={ itemClick } />
@@ -64,8 +67,8 @@ function App() {
             <Steps steps={recipe.steps} onClick={ itemClick } />
 
 
-            {/* TODO: Add the prep work display */}
-            { prepared ? <h2>Prep work done!</h2> : <h2>Just keep chopping.</h2>}
+            {/* TODO: Add the  work display */}
+            { prepared ? <h2>Прекрасная работа!</h2> : <h2>Продолжайте, у Вас все получится!</h2>}
         </article>
     )
 }

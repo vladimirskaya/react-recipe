@@ -6,5 +6,10 @@ article {
 }
 
 li:hover {
-    color: #ffe; 
+    color: rgb(94, 161, 40); 
+}
+
+span {
+    margin: 0;
+    font-size: 12px;
 }
